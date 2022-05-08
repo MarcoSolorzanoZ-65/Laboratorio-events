@@ -52,10 +52,4 @@ public class Evento {
         return codigo + "," + numAsistentes + "\n";
     }
     
-    public String toStringInvitados() {
-        String list = invitadosList.toString().replace("[", "").replace("]", "");
-        list = list.replace(",", "");
-        return list;
-    }
-    
 }
