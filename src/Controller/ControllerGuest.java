@@ -29,12 +29,10 @@ public class ControllerGuest implements Initializable {
     private Button quitButton;
     @FXML
     private Button showButton;
-    
+    boolean correcto = false;
     //accion al apretar un boton
     public void handleButtonClick(ActionEvent event) throws IOException {
         String codigo = Laboratorio1.cm.getArchivo();
-        boolean correcto = false;
-        
         //accion al apretar el boton mostrar
         if (event.getSource() == showButton) {
             while (correcto == false) {
@@ -59,6 +57,7 @@ public class ControllerGuest implements Initializable {
                         System.err.println("La opcion no existe!");
                 }
             }
+            infoTextArea.clear();
             infoTextArea.setText(model.getListaInvitados(main.cm.getCodigo()));
             main.cm.model.rewrite();
         }
