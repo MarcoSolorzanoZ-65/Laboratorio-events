@@ -14,9 +14,11 @@ import laboratorio1.Laboratorio1;
  * @time 10:13:20
  */
 public class ModelGuests {
-
+    
+    //contador de guests
     private int numInv;
-
+    
+    //metodo para cargar los guests
     public void load(String event) throws IOException {
         File evnt = new File(event + ".txt");
         if (evnt.exists()) {
@@ -34,7 +36,8 @@ public class ModelGuests {
             System.err.println("Archivo no existe!");
         }
     }
-
+    
+    //metodo para agregar 1 solo guest a un evento especifico
     public void addPersonaEvent(String event, Asistente person) {
         for (Evento evnt : Laboratorio1.listEventos) {
             if (evnt.getCodigo().equals(event)) {
@@ -44,7 +47,8 @@ public class ModelGuests {
             }
         }
     }
-
+    
+    //metodo para retornar la lista invitados sin parentesis cuadrados ni comas
     public String getListaInvitados(String event) {
         for (Evento evnt : Laboratorio1.listEventos) {
             if (evnt.getCodigo().equals(event)) {
